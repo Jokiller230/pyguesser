@@ -17,6 +17,12 @@ Once the server is up and running, you have to connect to it with a client, loca
 
 ```py
 python src/client_tcp.py
+
+Enter the server IP:
+> 127.0.0.1
+
+Enter the server port:
+> 4200
 ```
 
 
