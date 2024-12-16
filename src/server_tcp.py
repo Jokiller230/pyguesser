@@ -1,9 +1,11 @@
 import socket
 import random
 
+server_port = input("Enter preferred port: ")
+
 # Set up the server socket
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)
-server_socket.bind(("", 4200)) # Bind to all interfaces on port 4200
+server_socket.bind(("", int(server_port))) # Bind to all interfaces on specified port
 server_socket.listen(1)  # Listen for 1 incoming connection
 
 print("Waiting for client to connect...")
@@ -47,8 +49,6 @@ try:
             # End the game and disconnect if the guess is correct
             game_over = True
             client_socket.close()
-
-            break
 
 finally:
     # Close the server socket
